@@ -12,6 +12,24 @@ import {
 } from './util';
 
 export namespace Components {
+  interface DiscordMention {
+    /**
+    * The color to use for this mention. Only works for role mentions and must be in hex format.
+    */
+    'color': string;
+    /**
+    * Whether this entire message block should be highlighted (to emulate the "logged in user" being pinged).
+    */
+    'highlight': boolean;
+    /**
+    * The name of the user, channel, or role to mention. If omitted, it will be set based upon the `type` prop (i.e. 'User', 'channel', or 'Role').
+    */
+    'name'?: string;
+    /**
+    * The type of mention this should be. This will prepend the proper prefix character. Valid values: `user`, `channel`, `role`
+    */
+    'type': string;
+  }
   interface DiscordMessage {
     /**
     * The message author's username.
@@ -53,6 +71,12 @@ export namespace Components {
 declare global {
 
 
+  interface HTMLDiscordMentionElement extends Components.DiscordMention, HTMLStencilElement {}
+  var HTMLDiscordMentionElement: {
+    prototype: HTMLDiscordMentionElement;
+    new (): HTMLDiscordMentionElement;
+  };
+
   interface HTMLDiscordMessageElement extends Components.DiscordMessage, HTMLStencilElement {}
   var HTMLDiscordMessageElement: {
     prototype: HTMLDiscordMessageElement;
@@ -65,12 +89,31 @@ declare global {
     new (): HTMLDiscordMessagesElement;
   };
   interface HTMLElementTagNameMap {
+    'discord-mention': HTMLDiscordMentionElement;
     'discord-message': HTMLDiscordMessageElement;
     'discord-messages': HTMLDiscordMessagesElement;
   }
 }
 
 declare namespace LocalJSX {
+  interface DiscordMention {
+    /**
+    * The color to use for this mention. Only works for role mentions and must be in hex format.
+    */
+    'color'?: string;
+    /**
+    * Whether this entire message block should be highlighted (to emulate the "logged in user" being pinged).
+    */
+    'highlight'?: boolean;
+    /**
+    * The name of the user, channel, or role to mention. If omitted, it will be set based upon the `type` prop (i.e. 'User', 'channel', or 'Role').
+    */
+    'name'?: string;
+    /**
+    * The type of mention this should be. This will prepend the proper prefix character. Valid values: `user`, `channel`, `role`
+    */
+    'type'?: string;
+  }
   interface DiscordMessage {
     /**
     * The message author's username.
@@ -109,6 +152,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'discord-mention': DiscordMention;
     'discord-message': DiscordMessage;
     'discord-messages': DiscordMessages;
   }
@@ -120,6 +164,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
+      'discord-mention': LocalJSX.DiscordMention & JSXBase.HTMLAttributes<HTMLDiscordMentionElement>;
       'discord-message': LocalJSX.DiscordMessage & JSXBase.HTMLAttributes<HTMLDiscordMessageElement>;
       'discord-messages': LocalJSX.DiscordMessages & JSXBase.HTMLAttributes<HTMLDiscordMessagesElement>;
     }
