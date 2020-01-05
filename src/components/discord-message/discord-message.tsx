@@ -62,6 +62,10 @@ export class DiscordMessage {
 			throw new Error('All <discord-message> components must be direct children of <discord-messages>.')
 		}
 
+		const highlightMention: boolean = Array.from(this.el.children).some((child: HTMLDiscordMentionElement): boolean => {
+			return child.tagName.toLowerCase() === 'discord-mention' && child.highlight && child.type !== 'channel'
+		})
+
 		return (
 			<div class="discord-message">
 				<div class="discord-author-avatar">
@@ -77,7 +81,7 @@ export class DiscordMessage {
 						)
 						: ''
 					}
-					<div class="discord-message-body">
+					<div class={`discord-message-body ${highlightMention ? 'discord-highlight-mention': ''}`}>
 						{parent.compactMode
 							? (
 								<span>
