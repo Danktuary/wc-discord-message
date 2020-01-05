@@ -7,9 +7,37 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-
+import {
+  DiscordTimestamp,
+} from './util';
 
 export namespace Components {
+  interface DiscordMessage {
+    /**
+    * The message author's username.
+    */
+    'author': string;
+    /**
+    * The message author's avatar. Can be a relative path or external link.
+    */
+    'avatar': string;
+    /**
+    * Whether the message author is a bot or not.
+    */
+    'bot': boolean;
+    /**
+    * Whether the message has been edited or not.
+    */
+    'edited': boolean;
+    /**
+    * The message author's primary role color. Can be any [CSS color value](https://www.w3schools.com/cssref/css_colors_legal.asp).
+    */
+    'roleColor': string;
+    /**
+    * The timestamp to use for the message date. When supplying a string, the format must be `01/31/2000`.
+    */
+    'timestamp': DiscordTimestamp;
+  }
   interface DiscordMessages {
     /**
     * Whether to use compact mode or not.
@@ -25,17 +53,50 @@ export namespace Components {
 declare global {
 
 
+  interface HTMLDiscordMessageElement extends Components.DiscordMessage, HTMLStencilElement {}
+  var HTMLDiscordMessageElement: {
+    prototype: HTMLDiscordMessageElement;
+    new (): HTMLDiscordMessageElement;
+  };
+
   interface HTMLDiscordMessagesElement extends Components.DiscordMessages, HTMLStencilElement {}
   var HTMLDiscordMessagesElement: {
     prototype: HTMLDiscordMessagesElement;
     new (): HTMLDiscordMessagesElement;
   };
   interface HTMLElementTagNameMap {
+    'discord-message': HTMLDiscordMessageElement;
     'discord-messages': HTMLDiscordMessagesElement;
   }
 }
 
 declare namespace LocalJSX {
+  interface DiscordMessage {
+    /**
+    * The message author's username.
+    */
+    'author'?: string;
+    /**
+    * The message author's avatar. Can be a relative path or external link.
+    */
+    'avatar'?: string;
+    /**
+    * Whether the message author is a bot or not.
+    */
+    'bot'?: boolean;
+    /**
+    * Whether the message has been edited or not.
+    */
+    'edited'?: boolean;
+    /**
+    * The message author's primary role color. Can be any [CSS color value](https://www.w3schools.com/cssref/css_colors_legal.asp).
+    */
+    'roleColor'?: string;
+    /**
+    * The timestamp to use for the message date. When supplying a string, the format must be `01/31/2000`.
+    */
+    'timestamp'?: DiscordTimestamp;
+  }
   interface DiscordMessages {
     /**
     * Whether to use compact mode or not.
@@ -48,6 +109,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'discord-message': DiscordMessage;
     'discord-messages': DiscordMessages;
   }
 }
@@ -58,6 +120,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
+      'discord-message': LocalJSX.DiscordMessage & JSXBase.HTMLAttributes<HTMLDiscordMessageElement>;
       'discord-messages': LocalJSX.DiscordMessages & JSXBase.HTMLAttributes<HTMLDiscordMessagesElement>;
     }
   }
