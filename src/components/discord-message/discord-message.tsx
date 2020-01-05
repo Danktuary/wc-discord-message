@@ -1,4 +1,4 @@
-import { Component, Element, getAssetPath, h, Prop, Watch } from '@stencil/core'
+import { Component, Element, getAssetPath, h, Host, Prop, Watch } from '@stencil/core'
 import { avatars, DiscordTimestamp, handleTimestamp } from '../../util'
 import { AuthorInfo } from '../author-info/author-info'
 
@@ -72,7 +72,7 @@ export class DiscordMessage {
 		})
 
 		return (
-			<div class="discord-message">
+			<Host class="discord-message">
 				<div class="discord-author-avatar">
 					<img src={avatarPath} alt={this.author} />
 				</div>
@@ -101,7 +101,7 @@ export class DiscordMessage {
 					</div>
 					<slot name="embeds"></slot>
 				</div>
-			</div>
+			</Host>
 		)
 	}
 }
