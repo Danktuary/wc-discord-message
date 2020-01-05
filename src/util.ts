@@ -1,3 +1,13 @@
+const discordAvatars = {
+	blue: 'blue.png',
+	gray: 'gray.png',
+	green: 'green.png',
+	orange: 'orange.png',
+	red: 'red.png',
+};
+
+export const avatars = Object.assign({ 'default': discordAvatars.blue }, discordAvatars)
+
 const dateRegex: RegExp = /^\d{2}\/\d{2}\/\d{4}$/
 
 export type DiscordTimestamp = Date | string
