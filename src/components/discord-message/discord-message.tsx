@@ -94,6 +94,7 @@ export class DiscordMessage {
 						<slot></slot>
 						{this.edited ? <span class="discord-message-edited">(edited)</span> : ''}
 					</div>
+					<slot name="embeds"></slot>
 				</div>
 			</div>
 		)
