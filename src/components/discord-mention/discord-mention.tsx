@@ -76,7 +76,8 @@ export class DiscordMention {
 	}
 
 	render() {
-		const name: string = !this.name && this.type === 'channel' ? this.type : this.type.charAt(0).toUpperCase() + this.type.slice(1)
+		const name: string = this.name || (this.type === 'channel' ? this.type : this.type.charAt(0).toUpperCase() + this.type.slice(1))
+
 		const colorStyle: { color?: string, 'background-color'?: string } = !this.color || this.type !== 'role'
 			? {}
 			: {
