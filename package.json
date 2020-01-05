@@ -24,5 +24,8 @@
   "devDependencies": {
     "@stencil/core": "^1.8.3"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "hex-to-rgba": "^2.0.1"
+  }
 }
