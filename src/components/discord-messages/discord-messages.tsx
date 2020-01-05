@@ -3,7 +3,6 @@ import { Component, Prop, h, Host } from '@stencil/core'
 @Component({
 	tag: 'discord-messages',
 	styleUrl: 'discord-messages.css',
-	shadow: true,
 })
 export class DiscordMessages {
 	/**
@@ -17,7 +16,7 @@ export class DiscordMessages {
 	@Prop() compactMode: boolean = false
 
 	render() {
-		const layoutClasses: string[] = [];
+		const layoutClasses: string[] = []
 		if (this.lightTheme) layoutClasses.push('discord-light-theme')
 		if (this.compactMode) layoutClasses.push('discord-compact-mode')
 

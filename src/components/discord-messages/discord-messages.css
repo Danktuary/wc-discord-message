@@ -1,4 +1,4 @@
-:host(.discord-messages) {
+.discord-messages {
 	color: #fff;
 	background-color: #36393e;
 	display: block;
@@ -9,7 +9,7 @@
 	border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-:host(.discord-messages):host(.discord-light-theme) {
+.discord-messages.discord-light-theme {
 	color: #747f8d;
 	background-color: #f7f7f7;
 	border-color: #dedede;
