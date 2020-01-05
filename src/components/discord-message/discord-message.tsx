@@ -1,4 +1,4 @@
-import { Component, Prop, h, Watch, Element } from '@stencil/core'
+import { Component, Element, h, Prop, Watch } from '@stencil/core'
 import { DiscordTimestamp, handleTimestamp } from '../../util'
 import { AuthorInfo } from '../author-info/author-info'
 

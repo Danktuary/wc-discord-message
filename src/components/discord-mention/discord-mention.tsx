@@ -1,4 +1,4 @@
-import { Component, Element, Prop, h, Watch } from '@stencil/core'
+import { Component, Element, h, Prop, Watch } from '@stencil/core'
 import hexToRgba from 'hex-to-rgba'
 
 @Component({
