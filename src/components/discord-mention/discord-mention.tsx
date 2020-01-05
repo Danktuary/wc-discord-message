@@ -55,24 +55,24 @@ export class DiscordMention {
 
 	componentDidLoad() {
 		if (this.color && this.type === 'role') {
-			this.mentionSpan.addEventListener('mouseover', this.setHoverColor.bind(this));
-			this.mentionSpan.addEventListener('mouseout', this.resetHoverColor.bind(this));
+			this.mentionSpan.addEventListener('mouseover', this.setHoverColor.bind(this))
+			this.mentionSpan.addEventListener('mouseout', this.resetHoverColor.bind(this))
 		}
 	}
 
 	componentDidUnload() {
 		if (this.color && this.type === 'role') {
-			this.mentionSpan.removeEventListener('mouseover', this.setHoverColor.bind(this));
-			this.mentionSpan.removeEventListener('mouseout', this.resetHoverColor.bind(this));
+			this.mentionSpan.removeEventListener('mouseover', this.setHoverColor.bind(this))
+			this.mentionSpan.removeEventListener('mouseout', this.resetHoverColor.bind(this))
 		}
 	}
 
 	setHoverColor() {
-		this.mentionSpan.style.backgroundColor = hexToRgba(this.color, 0.3);
+		this.mentionSpan.style.backgroundColor = hexToRgba(this.color, 0.3)
 	}
 
 	resetHoverColor() {
-		this.mentionSpan.style.backgroundColor = hexToRgba(this.color, 0.1);
+		this.mentionSpan.style.backgroundColor = hexToRgba(this.color, 0.1)
 	}
 
 	render() {

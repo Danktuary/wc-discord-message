@@ -11,4 +11,4 @@ export const AuthorInfo: FunctionalComponent<AuthorInfoProps> = ({ author, bot, 
 		<span class="discord-author-username" style={{ color: roleColor }}>{author}</span>
 		{bot ? <span class="discord-bot-tag">Bot</span> : ''}
 	</span>
-);
+)
