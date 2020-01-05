@@ -34,7 +34,7 @@ export class DiscordEmbed {
 	/**
 	 * The embed title.
 	 */
-	@Prop() title: string
+	@Prop() embedTitle: string
 
 	/**
 	 * The URL to open when you click on the embed title.
@@ -96,10 +96,10 @@ export class DiscordEmbed {
 								)
 								: ''
 							}
-							{this.title
+							{this.embedTitle
 								? (
 									<div class="discord-embed-title">
-										{this.url ? <a href={this.url} target="_blank">{this.title}</a> : <span>{this.title}</span>}
+										{this.url ? <a href={this.url} target="_blank">{this.embedTitle}</a> : <span>{this.embedTitle}</span>}
 									</div>
 								)
 								: ''

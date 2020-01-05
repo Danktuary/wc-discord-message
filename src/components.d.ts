@@ -30,6 +30,10 @@ export namespace Components {
     */
     'color': string;
     /**
+    * The embed title.
+    */
+    'embedTitle': string;
+    /**
     * The image to use next to the footer text.
     */
     'footerImage': string;
@@ -46,23 +50,19 @@ export namespace Components {
     */
     'timestamp'?: DiscordTimestamp;
     /**
-    * The embed title.
-    */
-    'title': string;
-    /**
     * The URL to open when you click on the embed title.
     */
     'url': string;
   }
   interface DiscordEmbedField {
     /**
+    * The field's title.
+    */
+    'fieldTitle': string;
+    /**
     * Whether this field should be displayed inline or not.
     */
     'inline': boolean;
-    /**
-    * The field's title.
-    */
-    'title': string;
   }
   interface DiscordEmbedFields {}
   interface DiscordMention {
@@ -188,6 +188,10 @@ declare namespace LocalJSX {
     */
     'color'?: string;
     /**
+    * The embed title.
+    */
+    'embedTitle'?: string;
+    /**
     * The image to use next to the footer text.
     */
     'footerImage'?: string;
@@ -204,23 +208,19 @@ declare namespace LocalJSX {
     */
     'timestamp'?: DiscordTimestamp;
     /**
-    * The embed title.
-    */
-    'title'?: string;
-    /**
     * The URL to open when you click on the embed title.
     */
     'url'?: string;
   }
   interface DiscordEmbedField {
     /**
+    * The field's title.
+    */
+    'fieldTitle': string;
+    /**
     * Whether this field should be displayed inline or not.
     */
     'inline'?: boolean;
-    /**
-    * The field's title.
-    */
-    'title': string;
   }
   interface DiscordEmbedFields {}
   interface DiscordMention {

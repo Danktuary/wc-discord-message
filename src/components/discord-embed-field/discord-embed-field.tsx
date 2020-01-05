@@ -8,7 +8,7 @@ export class DiscordEmbedField {
 	/**
 	 * The field's title.
 	 */
-	@Prop() title!: string
+	@Prop() fieldTitle!: string
 
 	/**
 	 * Whether this field should be displayed inline or not.
@@ -18,7 +18,7 @@ export class DiscordEmbedField {
 	render() {
 		return (
 			<Host class={`discord-embed-field ${this.inline ? 'discord-inline-field' : ''}`}>
-				<div class="discord-field-title">{this.title}</div>
+				<div class="discord-field-title">{this.fieldTitle}</div>
 				<slot></slot>
 			</Host>
 		)
