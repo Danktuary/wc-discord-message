@@ -53,13 +53,13 @@ export class DiscordMessage {
 	}
 
 	render() {
-		const parent = this.el.parentElement as any
+		const parent: HTMLDiscordMessagesElement = this.el.parentElement as HTMLDiscordMessagesElement
 
 		if (parent.tagName.toLowerCase() !== 'discord-messages') {
 			throw new Error('All <discord-message> components must be direct children of <discord-messages>.')
 		}
 
-		const avatarPath = avatars.hasOwnProperty(this.avatar) || !this.avatar
+		const avatarPath: string = avatars.hasOwnProperty(this.avatar) || !this.avatar
 			? getAssetPath(`./assets/avatars/${avatars[this.avatar || 'default']}`)
 			: this.avatar
 
