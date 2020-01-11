@@ -68,11 +68,7 @@ export class DiscordEmbed {
 	}
 
 	componentWillLoad() {
-		try {
-			this.timestamp = this.updateTimestamp(this.timestamp)
-		} catch (error) {
-			return Promise.reject(error)
-		}
+		this.timestamp = this.updateTimestamp(this.timestamp)
 	}
 
 	render() {

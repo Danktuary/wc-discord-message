@@ -46,11 +46,7 @@ export class DiscordMention {
 	}
 
 	componentWillLoad() {
-		try {
-			this.handleType(this.type)
-		} catch (error) {
-			return Promise.reject(error)
-		}
+		this.handleType(this.type)
 	}
 
 	componentDidLoad() {

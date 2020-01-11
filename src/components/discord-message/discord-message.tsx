@@ -49,11 +49,7 @@ export class DiscordMessage {
 	}
 
 	componentWillLoad() {
-		try {
- 			this.timestamp = handleTimestamp(this.timestamp)
-		} catch(error) {
-			return Promise.reject(error)
-		}
+		this.timestamp = handleTimestamp(this.timestamp)
 	}
 
 	render() {
