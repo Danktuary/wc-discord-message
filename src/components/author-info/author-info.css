@@ -5,6 +5,7 @@
 }
 
 .discord-message .discord-author-info .discord-author-username {
+	color: #fff;
 	font-size: 1.1em;
 	font-weight: 500;
 	letter-spacing: 0.5px;

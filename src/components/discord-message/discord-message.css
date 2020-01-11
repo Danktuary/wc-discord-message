@@ -1,4 +1,5 @@
 .discord-message {
+	color: #dcddde;
 	display: flex;
 	font-size: 0.9em;
 	padding: 1em 0.5em;
@@ -6,6 +7,7 @@
 }
 
 .discord-light-theme .discord-message {
+	color: #2e3338;
 	border-color: #eceeef;
 }
 
@@ -44,14 +46,22 @@
 }
 
 .discord-message .discord-message-timestamp {
-	color: #fff3;
+	color: #72767d;
 	font-size: 12px;
 	margin-left: 3px;
 }
 
+.discord-light-theme .discord-message .discord-message-timestamp {
+	color: #747f8d;
+}
+
 .discord-message .discord-message-edited {
-	color: #fff3;
+	color: #72767d;
 	font-size: 10px;
+}
+
+.discord-light-theme .discord-message .discord-message-edited {
+	color: #99aab5;
 }
 
 .discord-message .discord-message-content {
