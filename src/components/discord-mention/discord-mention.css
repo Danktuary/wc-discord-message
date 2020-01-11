@@ -2,7 +2,8 @@
 	color: #7289da;
 	background-color: rgba(114, 137, 218, 0.1);
 	font-weight: 500;
-	padding: 0 1px;
+	padding: 0 2px;
+	border-radius: 3px;
 }
 
 .discord-message .discord-mention:hover {
@@ -30,11 +31,13 @@
 	border-radius: 3px 0 0 3px;
 }
 
-.discord-message .discord-message-body.discord-highlight-mention .discord-mention {
+.discord-message .discord-message-body.discord-highlight-mention .discord-mention:not(.discord-channel-mention) {
 	background-color: unset !important;
+	padding: 0;
+	border-radius: 0;
 }
 
-.discord-message .discord-message-body.discord-highlight-mention .discord-mention:hover {
+.discord-message .discord-message-body.discord-highlight-mention .discord-mention:not(.discord-channel-mention):hover {
 	color: #7289da;
 	text-decoration: underline;
 }

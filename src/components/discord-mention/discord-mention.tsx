@@ -1,4 +1,4 @@
-import { Component, Element, h, Prop, Watch } from '@stencil/core'
+import { Component, Element, h, Host, Prop, Watch } from '@stencil/core'
 import hexToRgba from 'hex-to-rgba'
 
 @Component({
@@ -12,11 +12,6 @@ export class DiscordMention {
 	@Element() el: HTMLElement
 
 	/**
-	 * The ref to `<span class="discord-mention">` element
-	 */
-	private mentionSpan!: HTMLElement
-
-	/**
 	 * Whether this entire message block should be highlighted (to emulate the "logged in user" being pinged).
 	 */
 	@Prop() highlight: boolean = false
@@ -25,11 +20,6 @@ export class DiscordMention {
 	 * The color to use for this mention. Only works for role mentions and must be in hex format.
 	 */
 	@Prop() color: string
-
-	/**
-	 * The name of the user, channel, or role to mention. If omitted, it will be set based upon the `type` prop (i.e. 'User', 'channel', or 'Role').
-	 */
-	@Prop() name?: string
 
 	/**
 	 * The type of mention this should be. This will prepend the proper prefix character. Valid values: `user`, `channel`, `role`
@@ -51,38 +41,38 @@ export class DiscordMention {
 
 	componentDidLoad() {
 		if (this.color && this.type === 'role') {
-			this.mentionSpan.addEventListener('mouseover', this.setHoverColor.bind(this))
-			this.mentionSpan.addEventListener('mouseout', this.resetHoverColor.bind(this))
+			this.el.addEventListener('mouseover', this.setHoverColor.bind(this))
+			this.el.addEventListener('mouseout', this.resetHoverColor.bind(this))
 		}
 	}
 
 	componentDidUnload() {
 		if (this.color && this.type === 'role') {
-			this.mentionSpan.removeEventListener('mouseover', this.setHoverColor.bind(this))
-			this.mentionSpan.removeEventListener('mouseout', this.resetHoverColor.bind(this))
+			this.el.removeEventListener('mouseover', this.setHoverColor.bind(this))
+			this.el.removeEventListener('mouseout', this.resetHoverColor.bind(this))
 		}
 	}
 
 	setHoverColor() {
-		this.mentionSpan.style.backgroundColor = hexToRgba(this.color, 0.3)
+		this.el.style.backgroundColor = hexToRgba(this.color, 0.3)
 	}
 
 	resetHoverColor() {
-		this.mentionSpan.style.backgroundColor = hexToRgba(this.color, 0.1)
+		this.el.style.backgroundColor = hexToRgba(this.color, 0.1)
 	}
 
 	render() {
-		const name: string = this.name || (this.type === 'channel' ? this.type : this.type.charAt(0).toUpperCase() + this.type.slice(1))
+		const { color, type }: { color?: string, type?: string } = this
 
 		const colorStyle: {
 			color?: string,
 			'background-color'?: string
-		} = !this.color || this.type !== 'role' ? {} : { color: this.color, 'background-color': hexToRgba(this.color, 0.1) }
+		} = !color || type !== 'role' ? {} : { color, 'background-color': hexToRgba(color, 0.1) }
 
 		return (
-			<span style={colorStyle} class="discord-mention" ref={el => this.mentionSpan = el as HTMLElement}>
-				{this.type === 'channel' ? '#' : '@'}{name}
-			</span>
+			<Host style={colorStyle} class={`discord-mention discord-${type}-mention`}>
+				{type === 'channel' ? '#' : '@'}<slot>{type === 'channel' ? type : type.charAt(0).toUpperCase() + type.slice(1)}</slot>
+			</Host>
 		)
 	}
 }
