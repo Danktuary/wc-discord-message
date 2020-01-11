@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core'
+import { Component, h, Host } from '@stencil/core'
 
 @Component({
 	tag: 'discord-embed-fields',
@@ -7,9 +7,9 @@ import { Component, h } from '@stencil/core'
 export class DiscordEmbedFields {
 	render() {
 		return (
-			<div class="discord-embed-fields">
+			<Host class="discord-embed-fields">
 				<slot></slot>
-			</div>
+			</Host>
 		)
 	}
 }
