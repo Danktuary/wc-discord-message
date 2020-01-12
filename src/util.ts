@@ -28,13 +28,3 @@ export const findSlotElement = (elements: HTMLCollection, name: string): Element
 		return child.slot && child.slot === name
 	})
 }
-
-const discordAvatars: { [key: string]: string } = {
-	blue: 'blue.png',
-	gray: 'gray.png',
-	green: 'green.png',
-	orange: 'orange.png',
-	red: 'red.png',
-};
-
-export const avatars = Object.assign({ 'default': discordAvatars.blue }, discordAvatars)

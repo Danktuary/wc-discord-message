@@ -5,7 +5,6 @@ import { AuthorInfo } from '../author-info/author-info'
 @Component({
 	tag: 'discord-message',
 	styleUrl: 'discord-message.css',
-	assetsDirs: ['assets'],
 })
 export class DiscordMessage {
 	/**
@@ -59,9 +58,7 @@ export class DiscordMessage {
 			throw new Error('All <discord-message> components must be direct children of <discord-messages>.')
 		}
 
-		const avatarPath: string = avatars.hasOwnProperty(this.avatar) || !this.avatar
-			? getAssetPath(`./assets/avatars/${avatars[this.avatar || 'default']}`)
-			: this.avatar
+		const avatarSrc: string = avatars[this.avatar] ?? this.avatar ?? avatars.default
 
 		const highlightMention: boolean = Array.from(this.el.children).some((child: HTMLDiscordMentionElement): boolean => {
 			return child.tagName.toLowerCase() === 'discord-mention' && child.highlight && child.type !== 'channel'
@@ -70,7 +67,7 @@ export class DiscordMessage {
 		return (
 			<Host class="discord-message">
 				<div class="discord-author-avatar">
-					<img src={avatarPath} alt={this.author} />
+					<img src={avatarSrc} alt={this.author} />
 				</div>
 				<div class="discord-message-content">
 					{!parent.compactMode
