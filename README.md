@@ -63,9 +63,9 @@ yarn add wc-discord-message
 Import it and call the necessary functions in your app entry file.
 
 ```js
-import { applyPolyfills, defineCustomElements } from 'wc-discord-message/loader';
+import { applyPolyfills, defineCustomElements } from 'wc-discord-message/loader'
 
-applyPolyfills().then(() => defineCustomElements(window));
+applyPolyfills().then(() => defineCustomElements(window))
 ```
 
 And then use it in your HTML templates, JSX, etc.
@@ -91,7 +91,7 @@ Refer to the [Stencil docs on framework integration](https://stenciljs.com/docs/
 
 ```js
 // main.js
-Vue.config.ignoredElements.push(/^discord-/); // for more precise matching: /^discord-(messages?|mention|embed(-fields?)?)$/
+Vue.config.ignoredElements.push(/^discord-/) // for more precise matching: /^discord-(messages?|mention|embed(-fields?)?)$/
 ```
 
 ### Browser build

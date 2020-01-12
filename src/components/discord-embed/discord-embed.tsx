@@ -63,7 +63,7 @@ export class DiscordEmbed {
 
 	@Watch('timestamp')
 	updateTimestamp(value?: DiscordTimestamp): string {
-		if (!value) return null;
+		if (!value) return null
 		return handleTimestamp(value)
 	}
 
