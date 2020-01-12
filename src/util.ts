@@ -24,7 +24,5 @@ export const handleTimestamp = (value: DiscordTimestamp): string => {
 }
 
 export const findSlotElement = (elements: HTMLCollection, name: string): Element => {
-	return Array.from(elements).find((child: Element): boolean => {
-		return child.slot && child.slot === name
-	})
+	return Array.from(elements).find((child: Element): boolean => child?.slot === name)
 }
