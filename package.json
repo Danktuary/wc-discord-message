@@ -1,7 +1,17 @@
 {
   "name": "wc-discord-message",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "Web components to easily build and display fake Discord messages on your webpages.",
+    "keywords": [
+    "stencil",
+    "web",
+    "components",
+    "discord",
+    "message",
+    "fake",
+    "mock",
+    "embed"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
