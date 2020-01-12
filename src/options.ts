@@ -37,7 +37,7 @@ export const avatars: Avatars = Object.assign(discordAvatars, globalAvatars, {
 	default: discordAvatars[globalAvatars.default] ?? globalAvatars.default ?? discordAvatars.blue
 })
 
-export const profiles: { [key: string]: Profile } = $discordMessage.profiles
+export const profiles: { [key: string]: Profile } = $discordMessage.profiles ?? {}
 
 export const defaultTheme: string = $discordMessage.defaultTheme !== 'light' ? 'dark' : 'light'
 
