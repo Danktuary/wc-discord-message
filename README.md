@@ -8,7 +8,7 @@ If you use Vue in your project, you should use [vue-discord-message](https://vue
 
 ## Features
 
-* Design modeled after Discord itself
+* Design modeled after [Discord](https://discordapp.com/) itself
 * Comfy and compact mode support
 * Dark and light themes support
 * Set the message author's username, avatar (use defaults or provide your own), role color, and "bot" tag status
