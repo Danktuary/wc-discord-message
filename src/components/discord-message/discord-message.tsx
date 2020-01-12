@@ -1,5 +1,6 @@
-import { Component, Element, getAssetPath, h, Host, Prop, Watch } from '@stencil/core'
-import { avatars, DiscordTimestamp, handleTimestamp } from '../../util'
+import { Component, Element, h, Host, Prop, Watch } from '@stencil/core'
+import { avatars, profiles, Profile } from '../../options'
+import { DiscordTimestamp, handleTimestamp } from '../../util'
 import { AuthorInfo } from '../author-info/author-info'
 
 @Component({
@@ -11,6 +12,11 @@ export class DiscordMessage {
 	 * The DiscordMessage element.
 	 */
 	@Element() el: HTMLElement
+
+	/**
+	 * The profile data to use.
+	 */
+	@Prop() profile: string
 
 	/**
 	 * The message author's username.
@@ -58,7 +64,11 @@ export class DiscordMessage {
 			throw new Error('All <discord-message> components must be direct children of <discord-messages>.')
 		}
 
-		const avatarSrc: string = avatars[this.avatar] ?? this.avatar ?? avatars.default
+		const resolveAvatar = (avatar: string): string => avatars[avatar] ?? avatar ?? avatars.default
+
+		const defaultData: Profile = { author: this.author, bot: this.bot, roleColor: this.roleColor }
+		const profileData: Profile = profiles[this.profile] ?? {}
+		const profile: Profile = Object.assign(defaultData, profileData, { avatar: resolveAvatar(profileData.avatar ?? this.avatar)})
 
 		const highlightMention: boolean = Array.from(this.el.children).some((child: HTMLDiscordMentionElement): boolean => {
 			return child.tagName.toLowerCase() === 'discord-mention' && child.highlight && child.type !== 'channel'
@@ -67,13 +77,13 @@ export class DiscordMessage {
 		return (
 			<Host class="discord-message">
 				<div class="discord-author-avatar">
-					<img src={avatarSrc} alt={this.author} />
+					<img src={profile.avatar} alt={profile.author} />
 				</div>
 				<div class="discord-message-content">
 					{!parent.compactMode
 						? (
 							<div>
-								<AuthorInfo author={this.author} bot={this.bot} roleColor={this.roleColor} />
+								<AuthorInfo author={profile.author} bot={profile.bot} roleColor={profile.roleColor} />
 								<span class="discord-message-timestamp">{this.timestamp}</span>
 							</div>
 						)
@@ -84,7 +94,7 @@ export class DiscordMessage {
 							? (
 								<span>
 									<span class="discord-message-timestamp">{this.timestamp}</span>
-									<AuthorInfo author={this.author} bot={this.bot} roleColor={this.roleColor} />
+									<AuthorInfo author={profile.author} bot={profile.bot} roleColor={profile.roleColor} />
 								</span>
 							)
 							: ''

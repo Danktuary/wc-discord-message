@@ -97,6 +97,10 @@ export namespace Components {
     */
     'edited': boolean;
     /**
+    * The profile data to use.
+    */
+    'profile': string;
+    /**
     * The message author's primary role color. Can be any [CSS color value](https://www.w3schools.com/cssref/css_colors_legal.asp).
     */
     'roleColor': string;
@@ -250,6 +254,10 @@ declare namespace LocalJSX {
     * Whether the message has been edited or not.
     */
     'edited'?: boolean;
+    /**
+    * The profile data to use.
+    */
+    'profile'?: string;
     /**
     * The message author's primary role color. Can be any [CSS color value](https://www.w3schools.com/cssref/css_colors_legal.asp).
     */

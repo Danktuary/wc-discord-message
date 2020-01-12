@@ -160,6 +160,40 @@ window.$discordMessage = {
 }
 ```
 
+### Profile shortcuts
+
+Sometimes you'll want to use the same message data across multiple messages. You can do so by providing an object of profiles in `window.$discordMessage.profiles`.
+
+```js
+window.$discordMessage = {
+	profiles: {
+		sanc: {
+			author: 'Sanctuary',
+			avatar: 'https://i.imgur.com/0TeacfY.png',
+		},
+		rinon: {
+			author: 'Rinon',
+			avatar: 'https://i.imgur.com/axQ9wJl.png',
+			bot: true,
+			roleColor: '#ee82ee',
+		},
+	},
+}
+```
+
+And then in your HTML:
+
+```html
+<discord-messages>
+	<discord-message profile="rinon">
+		Welcome to our server, <mention>Sanctuary</mention>!
+	</discord-message>
+	<discord-message profile="sanc">
+		Hey, glad to be here!
+	</discord-message>
+</discord-messages>
+```
+
 ### Components notes
 
 Below are notes for a few certain components. If you want to see what props each component has, check their readme.md file in the respective [`/src/components/`](https://github.com/Danktuary/wc-discord-message/blob/master/src/components/) folder.

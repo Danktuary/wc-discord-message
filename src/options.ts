@@ -7,8 +7,16 @@ type Avatars = {
 	[key: string]: string
 }
 
+export type Profile = {
+	author?: string
+	avatar?: string
+	bot?: boolean
+	roleColor?: string
+}
+
 type DiscordMessageOptions = {
 	avatars?: Avatars
+	profiles?: { [key: string]: Profile }
 	defaultTheme?: string
 	defaultMode?: string
 }
@@ -28,6 +36,9 @@ const globalAvatars: any = $discordMessage.avatars ?? {}
 export const avatars: Avatars = Object.assign(discordAvatars, globalAvatars, {
 	default: discordAvatars[globalAvatars.default] ?? globalAvatars.default ?? discordAvatars.blue
 })
+
+export const profiles: { [key: string]: Profile } = $discordMessage.profiles
+
 export const defaultTheme: string = $discordMessage.defaultTheme !== 'light' ? 'dark' : 'light'
 
 export const defaultMode: string = $discordMessage.defaultMode !== 'compact' ? 'cozy' : 'compact'
