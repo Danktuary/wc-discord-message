@@ -14,7 +14,7 @@ export class DiscordMessage {
 	@Element() el: HTMLElement
 
 	/**
-	 * The profile data to use.
+	 * The id of the profile data to use.
 	 */
 	@Prop() profile: string
 
@@ -24,7 +24,7 @@ export class DiscordMessage {
 	@Prop() author: string = 'User'
 
 	/**
-	 * The message author's avatar. Can be a relative path or external link.
+	 * The message author's avatar. Can be an avatar shortcut, relative path, or external link.
 	 */
 	@Prop() avatar: string
 

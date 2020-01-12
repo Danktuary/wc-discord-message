@@ -85,7 +85,7 @@ export namespace Components {
     */
     'author': string;
     /**
-    * The message author's avatar. Can be a relative path or external link.
+    * The message author's avatar. Can be an avatar shortcut, relative path, or external link.
     */
     'avatar': string;
     /**
@@ -97,7 +97,7 @@ export namespace Components {
     */
     'edited': boolean;
     /**
-    * The profile data to use.
+    * The id of the profile data to use.
     */
     'profile': string;
     /**
@@ -243,7 +243,7 @@ declare namespace LocalJSX {
     */
     'author'?: string;
     /**
-    * The message author's avatar. Can be a relative path or external link.
+    * The message author's avatar. Can be an avatar shortcut, relative path, or external link.
     */
     'avatar'?: string;
     /**
@@ -255,7 +255,7 @@ declare namespace LocalJSX {
     */
     'edited'?: boolean;
     /**
-    * The profile data to use.
+    * The id of the profile data to use.
     */
     'profile'?: string;
     /**
