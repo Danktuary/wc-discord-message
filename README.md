@@ -60,13 +60,17 @@ yarn add wc-discord-message
 # or npm install wc-discord-message
 ```
 
-Import it and then use it in your HTML templates, JSX, etc.
+Import it and call the necessary functions in your app entry file.
 
 ```js
-import 'wc-discord-message';
+import { applyPolyfills, defineCustomElements } from 'wc-discord-message/loader';
 
-// ...
+applyPolyfills().then(() => defineCustomElements(window));
+```
 
+And then use it in your HTML templates, JSX, etc.
+
+```js
 export default class App {
 	render() {
 		return (
@@ -81,6 +85,13 @@ export default class App {
 		)
 	}
 }
+```
+
+Refer to the [Stencil docs on framework integration](https://stenciljs.com/docs/overview) if you're using a specific framework. If you're using Vue, you can use this for the `.ignoredElements` config option:
+
+```js
+// main.js
+Vue.config.ignoredElements.push(/^discord-/); // for more precise matching: /^discord-(messages?|mention|embed(-fields?)?)$/
 ```
 
 ### Browser build
