@@ -9,17 +9,24 @@ export class DiscordMessages {
 	/**
 	 * Whether to use light theme or not.
 	 */
-	@Prop({ mutable: true, reflect: true }) lightTheme: boolean = false
+	@Prop({ mutable: true, reflect: true }) lightTheme: boolean
 
 	/**
 	 * Whether to use compact mode or not.
 	 */
-	@Prop({ mutable: true, reflect: true }) compactMode: boolean = false
+	@Prop({ mutable: true, reflect: true }) compactMode: boolean
+
+	componentWillLoad() {
+		if (this.lightTheme === true || defaultTheme === 'light' && this.lightTheme !== false) {
+			this.lightTheme = true
+		}
+
+		if (this.compactMode === true || defaultMode === 'compact' && this.compactMode !== false) {
+			this.compactMode = true
+		}
+	}
 
 	render() {
-		if (defaultTheme === 'light') this.lightTheme = true
-		if (defaultMode === 'compact') this.compactMode = true
-
 		const layoutClasses: string[] = []
 		if (this.lightTheme) layoutClasses.push('discord-light-theme')
 		if (this.compactMode) layoutClasses.push('discord-compact-mode')
