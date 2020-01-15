@@ -136,7 +136,7 @@ The syntax is kept fairly simple. Here's a basic example of a regular conversati
 
 ### Default font
 
-By default, this plugin uses the Google Fonts CDN to pull in the Roboto font. This isn't the same font Discord uses, so if you want to provide your own, you can override the CSS.
+By default, this package uses the Google Fonts CDN to pull in the Roboto font. This isn't the same font Discord uses, so if you want to provide your own, you can override the CSS.
 
 ```css
 /* index.css */
