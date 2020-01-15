@@ -49,6 +49,8 @@ If you use Vue in your project, you should use [vue-discord-message](https://vue
 </discord-messages>
 ```
 
+Check out the [live demo](https://wc-discord-message.netlify.com/) for further examples.
+
 ## Installation
 
 ### Package managers
