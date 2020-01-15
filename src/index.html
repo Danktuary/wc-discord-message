@@ -4,24 +4,6 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
 	<title>Discord Message Web Components</title>
-	<script>
-		window.$discordMessage = {
-			profiles: {
-				sanc: {
-					author: 'Sanctuary',
-					avatar: 'https://i.imgur.com/0TeacfY.png',
-					roleColor: '#0099ff'
-				},
-				twelve: {
-					author: 'Twelve',
-					avatar: 'https://i.imgur.com/Mc0F0Hf.png',
-					roleColor: '#70f0b4',
-				},
-			}
-		}
-	</script>
-	<script type="module" src="/build/wc-discord-message.esm.js"></script>
-	<script nomodule src="/build/wc-discord-message.js"></script>
 	<style>
 		body {
 			color: #eee;
@@ -49,6 +31,24 @@
 			padding-bottom: 0.25em;
 		}
 	</style>
+	<script>
+		window.$discordMessage = {
+			profiles: {
+				sanc: {
+					author: 'Sanctuary',
+					avatar: 'https://i.imgur.com/0TeacfY.png',
+					roleColor: '#0099ff'
+				},
+				twelve: {
+					author: 'Twelve',
+					avatar: 'https://i.imgur.com/Mc0F0Hf.png',
+					roleColor: '#70f0b4',
+				},
+			},
+		}
+	</script>
+	<script type="module" src="/build/wc-discord-message.esm.js"></script>
+	<script nomodule src="/build/wc-discord-message.js"></script>
 </head>
 <body>
 	<div>
@@ -95,7 +95,7 @@
 				<discord-message>Fluttering in the moonlight 🌝</discord-message>
 				<discord-message>Waiting for the day when</discord-message>
 				<discord-message>Compact mode would be turned on</discord-message>
-			</div>
+			</discord-messages>
 			<h3 class="title">Mentions</h3>
 			<discord-messages>
 				<discord-message profile="sanc">
