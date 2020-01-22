@@ -34,7 +34,7 @@ const discordAvatars: Avatars = {
 const globalAvatars: any = $discordMessage.avatars ?? {}
 
 export const avatars: Avatars = Object.assign(discordAvatars, globalAvatars, {
-	default: discordAvatars[globalAvatars.default] ?? globalAvatars.default ?? discordAvatars.blue
+	default: discordAvatars[globalAvatars.default] ?? globalAvatars.default ?? discordAvatars.blue,
 })
 
 export const profiles: { [key: string]: Profile } = $discordMessage.profiles ?? {}
