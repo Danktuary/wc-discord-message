@@ -28,7 +28,7 @@ If you use Vue in your project, you should use [vue-discord-message](https://vue
 	<discord-message author="Dawn" avatar="red">
 		Hi, I'm new here too!
 	</discord-message>
-	<discord-message author="Sanctuary" avatar="https://i.imgur.com/FPWMhCa.png" role-color="#0099ff">
+	<discord-message author="Sanctuary" avatar="https://i.imgur.com/0TeacfY.png" role-color="#0099ff">
 		Hey, <discord-mention>User</discord-mention> and <discord-mention>Dawn</discord-mention>. Welcome to our server! Be sure to read through the <discord-mention type="channel">rules</discord-mention>. You can ping <discord-mention type="role" color="#70f0b4">Support</discord-mention> if you need help.
 	</discord-message>
 	<discord-message author="Twelve" avatar="https://i.imgur.com/Mc0F0Hf.png" role-color="#70f0b4">
@@ -128,7 +128,7 @@ The syntax is kept fairly simple. Here's a basic example of a regular conversati
 	<discord-message author="Dawn" avatar="red">
 		Hi, I'm new here too!
 	</discord-message>
-	<discord-message author="Sanctuary" avatar="https://i.imgur.com/FPWMhCa.png" role-color="#0099ff">
+	<discord-message author="Sanctuary" avatar="https://i.imgur.com/0TeacfY.png" role-color="#0099ff">
 		Hey, <discord-mention>User</discord-mention> and <discord-mention>Dawn</discord-mention>. Welcome to our server!
 	</discord-message>
 </discord-messages>
