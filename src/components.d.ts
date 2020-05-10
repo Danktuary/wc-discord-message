@@ -108,6 +108,10 @@ export namespace Components {
     * The timestamp to use for the message date. When supplying a string, the format must be `01/31/2000`.
     */
     'timestamp': DiscordTimestamp;
+    /**
+    * Whether the bot is verified or not.
+    */
+    'verified': boolean;
   }
   interface DiscordMessages {
     /**
@@ -270,6 +274,10 @@ declare namespace LocalJSX {
     * The timestamp to use for the message date. When supplying a string, the format must be `01/31/2000`.
     */
     'timestamp'?: DiscordTimestamp;
+    /**
+    * Whether the bot is verified or not.
+    */
+    'verified'?: boolean;
   }
   interface DiscordMessages {
     /**

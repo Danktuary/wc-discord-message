@@ -34,6 +34,11 @@ export class DiscordMessage {
 	@Prop() bot: boolean = false
 
 	/**
+	 * Whether the bot is verified or not.
+	 */
+	@Prop() verified: boolean = false
+
+	/**
 	 * Whether the message has been edited or not.
 	 */
 	@Prop() edited: boolean = false
@@ -66,7 +71,7 @@ export class DiscordMessage {
 
 		const resolveAvatar = (avatar: string): string => avatars[avatar] ?? avatar ?? avatars.default
 
-		const defaultData: Profile = { author: this.author, bot: this.bot, roleColor: this.roleColor }
+		const defaultData: Profile = { author: this.author, bot: this.bot, verified: this.verified, roleColor: this.roleColor }
 		const profileData: Profile = profiles[this.profile] ?? {}
 		const profile: Profile = Object.assign(profileData, defaultData, { avatar: resolveAvatar(this.avatar ?? profileData.avatar)})
 
@@ -83,7 +88,7 @@ export class DiscordMessage {
 					{!parent.compactMode
 						? (
 							<div>
-								<AuthorInfo author={profile.author} bot={profile.bot} roleColor={profile.roleColor} />
+								<AuthorInfo author={profile.author} bot={profile.bot} verified={profile.verified} roleColor={profile.roleColor} />
 								<span class="discord-message-timestamp">{this.timestamp}</span>
 							</div>
 						)
@@ -94,7 +99,7 @@ export class DiscordMessage {
 							? (
 								<span>
 									<span class="discord-message-timestamp">{this.timestamp}</span>
-									<AuthorInfo author={profile.author} bot={profile.bot} roleColor={profile.roleColor} />
+									<AuthorInfo author={profile.author} bot={profile.bot} verified={profile.verified} roleColor={profile.roleColor} />
 								</span>
 							)
 							: ''

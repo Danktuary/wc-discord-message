@@ -11,6 +11,7 @@ export type Profile = {
 	author?: string
 	avatar?: string
 	bot?: boolean
+	verified?: boolean;
 	roleColor?: string
 }
 
