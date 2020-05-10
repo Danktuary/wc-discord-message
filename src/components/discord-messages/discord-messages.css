@@ -16,3 +16,7 @@
 	background-color: #f7f7f7;
 	border-color: #dedede;
 }
+
+.discord-messages.discord-no-background {
+	background-color: unset;
+}

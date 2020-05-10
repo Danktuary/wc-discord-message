@@ -118,6 +118,10 @@ export namespace Components {
     * Whether to use light theme or not.
     */
     'lightTheme': boolean;
+    /**
+    * Whether to use light theme or not.
+    */
+    'noBackground': boolean;
   }
 }
 
@@ -276,6 +280,10 @@ declare namespace LocalJSX {
     * Whether to use light theme or not.
     */
     'lightTheme'?: boolean;
+    /**
+    * Whether to use light theme or not.
+    */
+    'noBackground'?: boolean;
   }
 
   interface IntrinsicElements {

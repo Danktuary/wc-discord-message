@@ -19,6 +19,7 @@ type DiscordMessageOptions = {
 	profiles?: { [key: string]: Profile }
 	defaultTheme?: string
 	defaultMode?: string
+	defaultBackground?: 'discord' | 'none';
 }
 
 const { $discordMessage = {} }: { $discordMessage: DiscordMessageOptions } = window as any
@@ -42,3 +43,5 @@ export const profiles: { [key: string]: Profile } = $discordMessage.profiles ?? 
 export const defaultTheme: string = $discordMessage.defaultTheme !== 'light' ? 'dark' : 'light'
 
 export const defaultMode: string = $discordMessage.defaultMode !== 'compact' ? 'cozy' : 'compact'
+
+export const defaultBackground: string = $discordMessage.defaultBackground !== 'none' ? 'discord' : 'none'
