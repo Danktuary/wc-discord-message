@@ -123,7 +123,7 @@ export namespace Components {
     */
     'lightTheme': boolean;
     /**
-    * Whether to use light theme or not.
+    * Whether to exclude the background or not.
     */
     'noBackground': boolean;
   }
@@ -289,7 +289,7 @@ declare namespace LocalJSX {
     */
     'lightTheme'?: boolean;
     /**
-    * Whether to use light theme or not.
+    * Whether to exclude the background or not.
     */
     'noBackground'?: boolean;
   }

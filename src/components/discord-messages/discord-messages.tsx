@@ -12,7 +12,7 @@ export class DiscordMessages {
 	@Prop({ mutable: true, reflect: true }) lightTheme: boolean
 
 	/**
-	 * Whether to use light theme or not.
+	 * Whether to exclude the background or not.
 	 */
 	@Prop({ mutable: true, reflect: true }) noBackground: boolean
 
