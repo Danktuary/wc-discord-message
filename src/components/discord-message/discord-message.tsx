@@ -75,7 +75,7 @@ export class DiscordMessage {
 		})
 
 		return (
-			<Host class="discord-message">
+			<Host class={`discord-message ${highlightMention ? 'discord-highlight-mention' : ''}`}>
 				<div class="discord-author-avatar">
 					<img src={profile.avatar} alt={profile.author} />
 				</div>
@@ -89,7 +89,7 @@ export class DiscordMessage {
 						)
 						: ''
 					}
-					<div class={`discord-message-body ${highlightMention ? 'discord-highlight-mention': ''}`}>
+					<div class="discord-message-body">
 						{parent.compactMode
 							? (
 								<span>
