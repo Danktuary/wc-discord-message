@@ -116,6 +116,10 @@ And then use it anywhere in your HTML.
 </body>
 ```
 
+## Upgrading to v2
+
+CSS updates and general fixes were applied. The only "breaking" change is that the `.discord-highlight-mention` class has been moved up from to `.discord-message.discord-message-body` to `.discord-message`, in case you're targetting it in your CSS somewhere.
+
 ## Usage
 
 The syntax is kept fairly simple. Here's a basic example of a regular conversation:
