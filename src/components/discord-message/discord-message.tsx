@@ -68,7 +68,7 @@ export class DiscordMessage {
 
 		const defaultData: Profile = { author: this.author, bot: this.bot, roleColor: this.roleColor }
 		const profileData: Profile = profiles[this.profile] ?? {}
-		const profile: Profile = Object.assign(profileData, defaultData, { avatar: resolveAvatar(this.avatar ?? profileData.avatar)})
+		const profile: Profile = Object.assign(defaultData, profileData, { avatar: resolveAvatar(this.avatar ?? profileData.avatar)})
 
 		const highlightMention: boolean = Array.from(this.el.children).some((child: HTMLDiscordMentionElement): boolean => {
 			return child.tagName.toLowerCase() === 'discord-mention' && child.highlight && child.type !== 'channel'
