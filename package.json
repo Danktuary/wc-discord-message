@@ -27,7 +27,8 @@
   "scripts": {
     "build": "stencil build --docs",
     "serve": "stencil build --dev --watch --serve",
-    "generate": "stencil generate"
+    "generate": "stencil generate",
+    "prepublishOnly": "yarn run build"
   },
   "devDependencies": {
     "@stencil/core": "^1.8.3"
