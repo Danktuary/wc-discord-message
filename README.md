@@ -101,7 +101,7 @@ Vue.config.ignoredElements.push(/^discord-/) // for more precise matching: /^dis
 If you're want to use the browser build, you can pull it in via unpkg.
 
 ```html
-<script src="https://unpkg.com/wc-discord-message"></script>
+<script src="https://unpkg.com/wc-discord-message@^2.0.0/dist/wc-discord-message/wc-discord-message.js"></script>
 ```
 
 And then use it anywhere in your HTML.
