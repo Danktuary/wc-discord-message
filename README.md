@@ -4,7 +4,8 @@
 
 Web components to easily build and display fake Discord messages on your webpages.
 
-If you use Vue in your project, you should use [vue-discord-message](https://vue-discord-message.netlify.com/).
+If you use Vue in your project, you should use [vue-discord-message](https://vue-discord-message.netlify.app/).
+If you use React in your project, you should use [react-discord-message](https://github.com/Danktuary/react-discord-message).
 
 ## Features
 
@@ -49,7 +50,7 @@ If you use Vue in your project, you should use [vue-discord-message](https://vue
 </discord-messages>
 ```
 
-Check out the [live demo](https://wc-discord-message.netlify.com/) for further examples.
+Check out the [live demo](https://wc-discord-message.netlify.app/) for further examples.
 
 ## Installation
 
