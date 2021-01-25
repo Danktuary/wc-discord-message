@@ -12,6 +12,10 @@
     "mock",
     "embed"
   ],
+  "homepage": "https://wc-discord-message.netlify.app/",
+  "repository": "https://github.com/Danktuary/wc-discord-message.git",
+  "author": "Sanctuary <sanc.pw@gmail.com>",
+  "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
@@ -33,7 +37,6 @@
   "devDependencies": {
     "@stencil/core": "^1.8.3"
   },
-  "license": "MIT",
   "dependencies": {
     "hex-to-rgba": "^2.0.1"
   }
