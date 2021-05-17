@@ -1,5 +1,5 @@
 .discord-message .discord-mention {
-	color: #7289da;
+	color: #5865F2;
 	background-color: rgba(114, 137, 218, 0.1);
 	font-weight: 500;
 	padding: 0 2px;
@@ -18,7 +18,7 @@
 
 .discord-message.discord-highlight-mention::before {
 	content: "";
-	background-color: #faa61a;
+	background-color: #ED4245;
 	display: block;
 	position: absolute;
 	top: 0;
@@ -36,6 +36,6 @@
 }
 
 .discord-message.discord-highlight-mention .discord-mention:hover {
-	color: #7289da;
+	color: #5865F2;
 	text-decoration: underline;
 }
